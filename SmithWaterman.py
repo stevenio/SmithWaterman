@@ -150,7 +150,6 @@ class SmithWaterman(object):
         nucleotide1 = self.seq1[_i-1]
 	assert _j-1 < self.numCols -1
 	assert _j-1 >= 0
-	print("_j={0}".format(_j))
 	nucleotide2 = self.seq2[_j-1]
 	#print("nt1: {0}; nt2: {1}".format(nucleotide1, nucleotide2))
 	score0 = self._score_diag(_i, _j, nucleotide1, nucleotide2)
@@ -228,5 +227,16 @@ class SmithWaterman(object):
 # If this file is run by itself, execute the followings
 #--------------------------------------------------------------------------------
 if __name__ == '__main__':
-  unittest.main(verbosity=1)
+  ## test 1
+  seq1 = "ACCGGCCAACTA"
+  seq2 = "ACCGTGTCACTA"
+  sw = SmithWaterman(seq1, seq2)
+  aligned_seq1, aligned_seq2 = sw.align()
+  print("\nResults:")
+  print("score matrix:")
+  print(sw.scoreMatrix)
+  print("sequence 1: {0}".format(aligned_seq1))
+  print("sequence 2: {0}".format(aligned_seq2))
+
+
 
