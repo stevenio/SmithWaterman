@@ -205,14 +205,6 @@ class SmithWaterman(object):
     aligned_seq2 = "".join(reversed(self.aligned_seq2))
     return [aligned_seq1, aligned_seq2]
 
-    # if the location of the cell with max score is not the lower right corner
-    # then just append the unused part to the end
-    #if row_index < self.numRows - 1:
-    #  self.aligned_seq1.append(self.seq1[row_index+1:])
-    #if col_index < self.numCols - 1:
-    #  self.aligned_seq2.append(self.seq2[col_index+1:])
-
-
   def __repr__(self):
     _show_str = []
     _show_str.append("seq1: {0}\n".format(self.seq1))
